@@ -1,12 +1,16 @@
 import "bootstrap/dist/css/bootstrap.css"
-import './App.css';
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
+import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/NavBar/Navbar";
+
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container-fluid">
      <Navbar/>
+     <ItemListContainer mensaje="Proximamente novedades!!!"/>
     </div>
   );
 }
