@@ -1,3 +1,10 @@
 .counter{
     text-align: center;
   }
+.texto{
+  color: white;
+}
+.mensaje{
+  text-align: center;
+  font-size: 30px;
+}

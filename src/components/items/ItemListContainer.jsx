@@ -13,7 +13,7 @@ const onAdd = ()=>{
 const ItemListContainer = ({mensaje}) => {
   return (
     <div>
-        <p>{mensaje}</p>
+        <p className='mensaje'>{mensaje}</p>
         <div>
           <Cards/>
           <ItemCount stock={5} initial={1} onAdd={onAdd} />
