@@ -9,13 +9,7 @@
   margin-right: auto;
 }
 
-.counter{
-  text-align: center;
-}
-.card{
-  width: 300px;
-  margin: auto;
-}
-.cardContainer{
-  background-color: blanchedalmond;
+.navbar-brand{
+  font-size: 50px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }

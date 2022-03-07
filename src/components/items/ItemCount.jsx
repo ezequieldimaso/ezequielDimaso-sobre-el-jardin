@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import planta from './imagenes/planta.jpg'
+
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial)

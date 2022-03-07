@@ -1,13 +1,13 @@
 import React from 'react'
-import planta from "../imagenes/planta.jpg"
+
 
 const Cards = () => {
   return (
     <div className="card">
-            <img src={planta}/>
+            <img src="/imagenes/planta.jpg" alt='planta'/>
             <div className='cardContainer'>
                 <div className="card-body ">
-                    <h4 className="card-text">Cintas. Mala madre. Chlorophytum comosum</h4>
+                    <h5 className="card-text">Cintas. Mala madre. Chlorophytum comosum</h5>
                 </div>
             </div>
     </div>

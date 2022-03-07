@@ -1,6 +1,9 @@
 import React from 'react'
-import ItemCount from './ItemCount'
-import Cards from './NavBar/Cards'
+import ItemCount from "../items/ItemCount"
+import Cards from "../cards/Cards"
+import "../cards/Cards.css"
+import "../items/Items.css"
+
 
 
 const onAdd = ()=>{

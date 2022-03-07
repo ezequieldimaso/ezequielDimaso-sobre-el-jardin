@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
-import ItemListContainer from "./components/ItemListContainer";
-import Navbar from "./components/NavBar/Navbar";
+import ItemListContainer from "./components/items/ItemListContainer"
+import Navbar from "./components/NavBar/Navbar"
+
 
 
 
