@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import Cards from './NavBar/Cards'
 
 
 const onAdd = ()=>{
@@ -10,7 +11,10 @@ const ItemListContainer = ({mensaje}) => {
   return (
     <div>
         <p>{mensaje}</p>
-        <ItemCount stock={5} initial={1} onAdd={onAdd} />
+        <div>
+          <Cards/>
+          <ItemCount stock={5} initial={1} onAdd={onAdd} />
+        </div>
     </div>
   )
 }

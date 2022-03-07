@@ -18,23 +18,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
   return (
     <div className='counter'>
         <div className="card">
-            <img src={planta}/>
-            <div className='cardContainer'>
-                <div className="card-body ">
-                    <h4 className="card-text">Cintas. Mala madre. Chlorophytum comosum</h4>
-                </div>
-            
-                <div>
-                    <button onClick={restar}>-</button>
-                    <span>{count}</span>
-                    <button onClick={sumar}>+</button>
-                </div>
-                <div>
-                    <br />
-                    <button onClick={onAdd}>Agregar al carrito</button>
-                    
-                </div>
-            </div>
+            <button onClick={restar}>-</button>
+            <span>{count}</span>
+            <button onClick={sumar}>+</button>
+            <button onClick={onAdd}>Agregar al carrito</button>     
         </div>
     </div>
   )
