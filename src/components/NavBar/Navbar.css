@@ -8,3 +8,14 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.counter{
+  text-align: center;
+}
+.card{
+  width: 300px;
+  margin: auto;
+}
+.cardContainer{
+  background-color: blanchedalmond;
+}

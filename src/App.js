@@ -5,7 +5,6 @@ import Navbar from "./components/NavBar/Navbar";
 
 
 
-
 function App() {
   return (
     <div className="App container-fluid">
