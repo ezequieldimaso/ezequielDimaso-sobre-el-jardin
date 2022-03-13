@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, {useState ,useEffect} from 'react'
 import ItemCount from "../items/ItemCount"
-import Cards from "../cards/Cards"
+// import Cards from "../cards/Cards"
 import "../cards/Cards.css"
-import "../items/Items.css"
+import  ItemList from '.ItemList'
 
 
 
@@ -10,38 +10,46 @@ const onAdd = ()=>{
   console.log("agrego productos al carrito")
 }
 
-function imprimirProductos (){
-  return new Promise((resolve ,reject)=>{
+const productos=[
+  {id:"01", nombre:"Cintas. Mala madre. Chlorophytum comosum",precio:1200,descripcion: "herbácea perenne", foto:"/imagenes/planta.jpg"},
+  {id:"02", nombre:"Cintas. Mala madre. Chlorophytum comosum",precio:1200,descripcion: "herbácea perenne", foto:"/imagenes/planta.jpg"},
+  {id:"03", nombre:"Cintas. Mala madre. Chlorophytum comosum",precio:1200,descripcion: "herbácea perenne", foto:"/imagenes/planta.jpg"}  
+  ]
 
+const obtenerProductos= new Promise((resolve ,reject)=>{
+  let condition= true
+  if(condition){
     setTimeout(()=>{
-      let productos=[
-        {nombre:"Cintas. Mala madre. Chlorophytum comosum",precio:1200,descripcion: "herbácea perenne"},
-        {nombre:"Cintas. Mala madre. Chlorophytum comosum",precio:1200,descripcion: "herbácea perenne"},
-        {nombre:"Cintas. Mala madre. Chlorophytum comosum",precio:1200,descripcion: "herbácea perenne"}  
-      ]
-      if(productos.length === 0){
-        reject("error arreglo vacio")
-      }else{
-        resolve(productos)
-      }
+      resolve(productos)
     },3000)
+  }else{
+    reject("error 404 - no se encontraron los productos")
   }
-)}
-
-imprimirProductos()
-.then((productos)=>{
-  console.log(productos)
-})
-.catch((err)=>{
-  console.log(err)
 })
 
 const ItemListContainer = ({mensaje}) => {
+  const [produs, setProdus]= useState([])
+  const[loading, setLoading]= useState(true)
+
+
+  useEffect(()=>{
+    obtenerProductos
+    .then((res) => setProdus(res))
+    .catch((err)=> console.log("error",err))
+    .finally(() => setLoading(false))
+  },[])
+  
+  
+
   return (
     <div>
         <p className='mensaje'>{mensaje}</p>
         <div>
-          <Cards/>
+          <ItemList productos= {produs/loading}/>
+          {/* {loading ? <p>Cargando...</p>
+          :
+          produs.map((produs) => <Cards key={produs.id} produs={produs}/>)}
+           */}
           <ItemCount stock={5} initial={1} onAdd={onAdd} />
         </div>
     </div>

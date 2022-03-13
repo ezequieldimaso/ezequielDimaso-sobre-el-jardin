@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
      <Navbar/>
-     <ItemListContainer  mensaje="Proximamente novedades!!!"/>
+     <ItemListContainer mensaje="Proximamente novedades!!!"/>
     </div>
   );
 }
