@@ -2,6 +2,9 @@
     width: 300px;
     margin: auto;
   }
+  .cardLoading{
+    display: flex;
+  }
 
   .cardContainer{
     background-color: blanchedalmond;
@@ -10,3 +13,8 @@
   .card-text{
     text-align: center;
   }
+
+  .img{
+    height: 200px;
+  }
+ 

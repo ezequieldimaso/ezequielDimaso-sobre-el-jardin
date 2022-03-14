@@ -1,19 +1,7 @@
 import React from 'react'
-import Cards from '../cards/Cards'
 
-
-
-
-const ItemList = ({produs ,loading}) => {
-  
+export const itemList = () => {
   return (
-    <div>
-         {loading ? <p>Cargando...</p>
-          :
-          produs.map((produs) => <Cards key={produs.id} produs={produs}/>)}
-          
-    </div>
+    <div>itemList</div>
   )
 }
-
-export default ItemList
