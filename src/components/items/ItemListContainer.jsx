@@ -1,12 +1,6 @@
 import React, {useState ,useEffect} from 'react'
 import"../items/Items.css"
-import Cards from "../cards/Cards"
-import "../cards/Cards.css"
-
-
-
-
-
+import  ItemList  from './Itemlist'
 
 const productos=[
   {id:"01", nombre:"Cintas. Mala madre. Chlorophytum Comosum",precio:1200,descripcion: "herbácea perenne", foto:"/imagenes/planta.jpg"},
@@ -27,25 +21,18 @@ const obtenerProductos= new Promise((resolve ,reject)=>{
 
 const ItemListContainer = ({mensaje}) => {
   const [produs, setProdus]= useState([])
-  const[loading, setLoading]= useState(true)
-
 
   useEffect(()=>{
     obtenerProductos
     .then((res) => setProdus(res))
     .catch((err)=> console.log("error",err))
-    .finally(() => setLoading(false))
-  },[])
+  })
   
-  
-
   return (
     <div>
       <p className='mensaje'>{mensaje}</p>
-      <div className='cardLoading'>
-        {loading ? <p className='loading'>Cargando...</p>
-        :
-        produs.map((produs) => <Cards key={produs.id} produs={produs}/>)}
+      <div>
+        <ItemList lista ={produs}/>
       </div>
     </div>
   )

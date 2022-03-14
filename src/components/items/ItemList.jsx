@@ -1,7 +1,14 @@
 import React from 'react'
+import Cards from '../cards/Cards'
+import "../cards/Cards.css"
 
-export const itemList = () => {
+
+export const ItemList = ({lista}) => {
   return (
-    <div>itemList</div>
+    <div className='cardLoading'>
+      {lista.map((produs) => <Cards key={produs.id} produs={produs}/>)}
+    </div>
   )
 }
+
+export default  ItemList
