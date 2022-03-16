@@ -1,6 +1,7 @@
 import React, {useState ,useEffect} from 'react'
 import"../items/Items.css"
-import  ItemList  from './Itemlist'
+import ItemDetailContainer from '../mocks/ItemDetailContainer'
+import ItemList from '../items/Itemlist'
 
 const productos=[
   {id:"01", nombre:"Cintas. Mala madre. Chlorophytum Comosum",precio:1200,descripcion: "herbácea perenne", foto:"/imagenes/planta.jpg"},
@@ -33,6 +34,9 @@ const ItemListContainer = ({mensaje}) => {
       <p className='mensaje'>{mensaje}</p>
       <div>
         <ItemList lista ={produs}/>
+      </div>
+      <div>
+        <ItemDetailContainer/>
       </div>
     </div>
   )
