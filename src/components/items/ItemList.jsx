@@ -3,7 +3,7 @@ import Cards from '../cards/Cards'
 import "../cards/Cards.css"
 
 
-export const ItemList = ({lista}) => {
+ const ItemList = ({lista}) => {
   return (
     <div className='cardLoading'>
       {lista.map((produs) => <Cards key={produs.id} produs={produs}/>)}

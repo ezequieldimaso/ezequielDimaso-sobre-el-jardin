@@ -1,10 +1,10 @@
 import React from 'react'
 import Cards from '../cards/Cards'
 
-const ItemDetail = ({detail}) => {
+export const ItemDetail = ({itemd}) => {
   return (
     <div>
-        {detail.map((plantas) =><Cards key={plantas.id}/>)}
+        {itemd.map((plantas) =><Cards key={plantas.id} plantas={plantas.nombre}/>)}
         
     </div>
   )

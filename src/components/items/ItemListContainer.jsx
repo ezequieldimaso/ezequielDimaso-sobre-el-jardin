@@ -36,7 +36,7 @@ const ItemListContainer = ({mensaje}) => {
         <ItemList lista ={produs}/>
       </div>
       <div>
-        <ItemDetailContainer/>
+        <ItemDetailContainer listaProductos={setProdus}/>
       </div>
     </div>
   )
