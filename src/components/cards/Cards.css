@@ -17,4 +17,6 @@
   .img{
     height: 200px;
   }
- 
+ .verMas{
+   display: grid;
+ }
