@@ -1,5 +1,6 @@
 .counter{
-    text-align: center;
+  text-align: start;
+  margin-left: 15px;
   }
 .texto{
   color: white;
@@ -7,4 +8,9 @@
 .mensaje{
   text-align: center;
   font-size: 30px;
+}.add{
+  margin-left: 60px;
+}
+.loading{
+  text-align: center;
 }

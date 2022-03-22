@@ -1,9 +1,11 @@
 .card{
     width: 300px;
     margin: auto;
+    margin-top: 25px;
   }
   .cardLoading{
     display: flex;
+    flex-flow: wrap;
   }
 
   .cardContainer{
@@ -18,5 +20,5 @@
     height: 200px;
   }
  .verMas{
-   display: grid;
+   text-align: center;
  }

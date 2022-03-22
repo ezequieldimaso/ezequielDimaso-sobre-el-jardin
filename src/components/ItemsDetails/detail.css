@@ -1,0 +1,30 @@
+.imgDetail{
+    height: 450px;
+    border: none;
+}
+
+.detalleContainer{
+    display: flex;
+    margin-top: 20px;
+}
+ .title{
+    margin-left: 10px
+}
+.price{
+    color: red;
+}
+.textDescripcion{
+    margin-top: 50px;
+    font-size: 17px;
+    font-family:monospace;
+}
+.card-body{
+    margin-right: 350px;
+}
+.carrusel{
+    width: 1800px;
+  }
+  .btnSpan{
+    background-color: blueviolet;
+  }
+  

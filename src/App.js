@@ -6,8 +6,12 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
-import ItemDetailContainer from "./components/mocks/ItemDetailContainer";
+import ItemDetailContainer from "./components/ItemsDetails/ItemDetailContainer";
+import Contacto from "./components/contacto/Contacto";
+import Error404 from "./components/paginaError/Error404";
+
 
 
 
@@ -21,8 +25,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ItemListContainer mensaje="Proximamente novedades!!!"/>}/>
-        <Route path="/category/:id" element={<ItemListContainer/>}/>
+        <Route path="productos/:categoryId" element={<ItemListContainer/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
+        <Route path="/contacto" element={ <Contacto/>}/>
+
+        <Route path="*" element={<Error404/>}/>
+        
+        
 
 
 

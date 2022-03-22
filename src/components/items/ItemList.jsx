@@ -1,13 +1,12 @@
-
 import Cards from '../cards/Cards'
 import "../cards/Cards.css"
 
 
- const ItemList = ({lista}) => {
+ const ItemList = ({productos}) => {
  
   return (
     <div className='cardLoading'>
-      {lista.map((produs) => <Cards key={produs.id} produs={produs}/>)}
+      {productos.map((produs) => <Cards key={produs.id} {...produs } />)}
     </div>
   )
 }

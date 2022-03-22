@@ -21,10 +21,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <button className='btn btn-success btn-sm'onClick={restar}>-</button>
             <span className='btn btn-light'>{count}</span>
             <button className='btn btn-success btn-sm' onClick={sumar}>+</button>
-        </div>
-        <div>
-            <br />
-            <button className='btn btn-info fw-bold texto' onClick={onAdd}>Agregar al carrito</button>     
+            <button className='btn btn-info fw-bold texto add' onClick={onAdd}>Agregar al carrito</button>   
         </div>
     </div>
   )

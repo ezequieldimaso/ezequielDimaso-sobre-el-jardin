@@ -1,5 +1,5 @@
 import React from 'react'
-import CartWidget from '../CartWidget'
+import CartWidget from '../cart/CartWidget'
 import "./Navbar.css"
 import { Link } from 'react-router-dom'
 
@@ -16,20 +16,21 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a className="dropdown-item" href="#">Plantas Interior</a></li>
-              <li><a className="dropdown-item" href="#">Plantas Exterior</a></li>
-              <li><a className="dropdown-item" href="#">Macetas y Decoracion</a></li>
+              <li><Link className="dropdown-item"  to="/productos/interior">Plantas Interior</Link></li>
+              <li><Link className="dropdown-item"  to="/productos/exterior">Plantas Exterior</Link></li>
+              <li><Link className="dropdown-item"  to="/productos/macetas">Macetas</Link></li>
+              
             </ul>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Contacto</a>
+            <Link className="nav-link" to="/contacto">Contacto</Link>
           </li>
         </ul>
       </div>
