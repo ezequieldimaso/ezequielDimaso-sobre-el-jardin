@@ -35,7 +35,7 @@ const Navbar = () => {
         </ul>
       </div>
     </div>  
-        <a className="nav-link icon " aria-current="page" href="#"><CartWidget/></a>
+    <Link className='icon' to="/cart"><CartWidget/></Link>
   </div>
 </nav>
   )

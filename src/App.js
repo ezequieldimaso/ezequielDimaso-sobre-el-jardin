@@ -11,6 +11,7 @@ import {
 import ItemDetailContainer from "./components/ItemsDetails/ItemDetailContainer";
 import Contacto from "./components/contacto/Contacto";
 import Error404 from "./components/paginaError/Error404";
+import Cart from "./components/cart/Cart";
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
         <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
         <Route path="/contacto" element={ <Contacto/>}/>
+        <Route path="/cart" element={ <Cart/>}/>
 
         <Route path="*" element={<Error404/>}/>
         

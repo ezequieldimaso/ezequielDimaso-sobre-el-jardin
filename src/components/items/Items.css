@@ -1,6 +1,7 @@
 .counter{
   text-align: start;
   margin-left: 15px;
+  display: flex;
   }
 .texto{
   color: white;
@@ -13,4 +14,7 @@
 }
 .loading{
   text-align: center;
+}
+.cart{
+  margin-left: 30px;
 }

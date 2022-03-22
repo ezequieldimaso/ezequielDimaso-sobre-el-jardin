@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from '../items/ItemCount'
 import "./detail.css"
 
-const onAdd = ()=>{
-  console.log("agrego productos al carrito")
-}
 
 
-export const ItemDetail = ({foto, nombre ,descripcion ,precio}) => {
+
+export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
+
+  const [cantidad, setCantidad] = useState(0)
+
+  const onAdd=()=>{
+    const itemToCart={
+      id,
+      nombre,
+      precio,
+      foto,
+      cantidad
+    }
+    console.log(itemToCart)
+  }
+
   return (
+  
+ 
 
         <div className='detalleContainer'>
           <img  className="imgDetail img-thumbnail" src={foto}alt='planta'/>
@@ -43,7 +57,11 @@ export const ItemDetail = ({foto, nombre ,descripcion ,precio}) => {
                       <p  className='textDescripcion'>{descripcion}</p>
                     </div>
                 </div>
-                  <ItemCount stock={5} initial={1} onAdd={onAdd} />
+                  <ItemCount
+                   max={stock} 
+                   cantidad={cantidad} 
+                   setCantidad={setCantidad}
+                   onAdd={onAdd} />
                 </div>
                 <div>
                 
