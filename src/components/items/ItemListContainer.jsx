@@ -16,10 +16,10 @@ const {categoryId} =useParams()
     pedirDatos()
     .then((res) =>{ 
       if(!categoryId){
-        setProdus(res)
-      }else{
         setProdus(res.filter((produs)=>produs.categoria === categoryId))
-      }
+      }else{
+       
+      } setProdus(res)
     })
     .catch((err)=> console.log("error",err)
   )

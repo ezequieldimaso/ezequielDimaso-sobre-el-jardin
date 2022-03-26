@@ -1,24 +1,26 @@
-import React, { useState } from 'react'
+import React, {useContext, useState } from 'react'
 import ItemCount from '../items/ItemCount'
 import "./detail.css"
-
-
-
+import { Link } from "react-router-dom"
+import { CartContext } from '../context/CartContext'
 
 export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
 
   const [cantidad, setCantidad] = useState(0)
 
-  const onAdd=()=>{
-    const itemToCart={
-      id,
-      nombre,
-      precio,
-      foto,
-      cantidad
+  const { agregarAlCarrito, isInCart } = useContext(CartContext)
+
+  const handleAgregar = () => {
+    if (cantidad === 0) return
+
+    if (!isInCart(id)) {
+        const addItem = {
+           id, nombre, precio, stock, cantidad,foto
+        }
+
+        agregarAlCarrito(addItem)
     }
-    console.log(itemToCart)
-  }
+}
 
   return (
   
@@ -26,27 +28,6 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
 
         <div className='detalleContainer'>
           <img  className="imgDetail img-thumbnail" src={foto}alt='planta'/>
-            {/* <div id="carouselExampleControls" className="carousel slide carrusel" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img  className="imgDetail img-thumbnail" src={foto}alt='planta'/>
-                </div>
-                <div class="carousel-item">
-                  <img  className="imgDetail img-thumbnail" src={foto}alt='planta'/>
-                </div>
-                <div class="carousel-item">
-                <img  className="imgDetail img-thumbnail" src={foto}alt='planta'/>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon btnSpan" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span className="carousel-control-next-icon btnSpan" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div> */}
             <div >
                 <div>
                     <div className='title'>
@@ -55,21 +36,36 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
                     <div className="card-body">
                       <h3 className="price">${precio}</h3>
                       <p  className='textDescripcion'>{descripcion}</p>
+                      
+
+                      {
+                        isInCart(id) 
+                        ?  <Link to="/cart" className="btn btn-success my-3">
+                                Terminar mi compra
+                            </Link>
+                        :
+                            <>
+                                <ItemCount 
+                                    max={stock} 
+                                    counter={cantidad} 
+                                    setCounter={setCantidad}
+                                />
+
+                                <button
+                                    className="btn btn-success my-2"            
+                                    onClick={handleAgregar}
+                                >
+                                    Agregar al carrito
+                                </button>
+                            </>
+                      }
+                      <Link to="/"><button className="btn btn-warning mx-2">Seguir comprando</button></Link>
                     </div>
                 </div>
-                  <ItemCount
-                   max={stock} 
-                   cantidad={cantidad} 
-                   setCantidad={setCantidad}
-                   onAdd={onAdd} />
-                </div>
-                <div>
-                
-                
             </div>
-          </div>
-   
-  )
+      </div>
+    )
+
 }
 
 export default ItemDetail

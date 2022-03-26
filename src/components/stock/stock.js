@@ -20,6 +20,7 @@ export const stock =[
     precio:1300,
     descripcion: "Es un grupo de pequeños arbustos con tallos delgados y flexibles (similar a una caña) con hojas en forma de cinta que crecen como plantas de sotobosque en las selvas tropicales. Es un arbusto de crecimiento vertical que alcanza los 1,5 m de altura, con hojas de 15 - 25 cm de largo y 1.5-4 cm de ancho en la base.", 
     foto:"/imagenes/planta3.jpg",
+    stock:10, 
      categoria:"interior"},  
     {id:"04",
      nombre:"Palo de Brasil. Palo de Agua. Dracena Deremensis",

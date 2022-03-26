@@ -19,9 +19,9 @@ const Navbar = () => {
             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <Link className="nav-link dropdown-toggle" to="/"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
-            </a>
+            </Link>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><Link className="dropdown-item"  to="/productos/interior">Plantas Interior</Link></li>
               <li><Link className="dropdown-item"  to="/productos/exterior">Plantas Exterior</Link></li>
@@ -35,7 +35,7 @@ const Navbar = () => {
         </ul>
       </div>
     </div>  
-    <Link className='icon' to="/cart"><CartWidget/></Link>
+    <CartWidget/>
   </div>
 </nav>
   )
