@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { pedirDatos } from '../base de datos/pedirDatos'
 import ItemDetail from './ItemDetail'
-
+import {db} from '../../utils/Firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
-   const[planta, setPlanta]= useState()
-   const[loading, setLoading]= useState(true)
+   const[planta, setPlanta]= useState(false)
+   const[loading, setLoading]= useState(null)
   
   
    const {itemId}= useParams()
 
   useEffect(() =>{
       setLoading(true)
-      pedirDatos()
-      .then((res)=> {
-        setPlanta(res.find((plant)=> plant.id ===itemId))
-        
-      })
-      .catch((error) => console.log(error))
-      .finally(()=>{
-        setLoading(false)
-      
-      })
+     
+      const docRef = doc(db, "items", itemId)
+      getDoc(docRef)
+          .then((doc) => {
+              setPlanta({id: doc.id, ...doc.data()})
+          })
+          .finally(()=> {
+              setLoading(false)
+          })
   },[])
   
   return (

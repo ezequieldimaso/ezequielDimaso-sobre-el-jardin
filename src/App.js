@@ -14,6 +14,7 @@ import Error404 from "./components/paginaError/Error404";
 import Cart from "./components/cart/Cart";
 import { CartProvider } from "./components/context/CartContext";
 
+
 function App() {
   return (
     <CartProvider>
@@ -24,12 +25,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ItemListContainer mensaje="Proximamente novedades!!!"/>}/>
-        <Route path="productos/:categoryId" element={<ItemListContainer/>}/>
+        <Route path="/productos/:categoryId" element={<ItemListContainer/>}/>
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
         <Route path="/detail/:itemId" element={<ItemDetailContainer/>}/>
         <Route path="/contacto" element={ <Contacto/>}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="*" element={<Error404/>}/>  
+        <Route path="*" element={<Error404/>}/>   
       </Routes>
       {/* hacerfooter */}
      </BrowserRouter>
