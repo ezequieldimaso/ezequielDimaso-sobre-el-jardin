@@ -10,9 +10,9 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
 
   const { agregarAlCarrito, isInCart } = useContext(CartContext)
 
-  // const handleAgregar = () => {
-  //   if (cantidad === 0) return
-  const ondAdd =()=>{
+  const handleAgregar = () => {
+    if (cantidad === 0) return
+  
     if (!isInCart(id)) {
         const addItem = {
            id, nombre, precio, stock, cantidad,foto
@@ -20,7 +20,7 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
 
         agregarAlCarrito(addItem)
     }
-}
+  }
 
   return (
   
@@ -50,12 +50,11 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
                                     max={stock} 
                                     counter={cantidad} 
                                     setCounter={setCantidad}
-                                    onClick={ondAdd}
                                 />
                       
                                 <button
                                     className="btn btn-success my-2"            
-                                    onClick={ondAdd}
+                                    onClick={handleAgregar}
                                     disabled={cantidad === 0}
                                 >
                                     Agregar al carrito
