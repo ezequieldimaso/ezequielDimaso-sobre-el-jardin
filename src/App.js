@@ -14,6 +14,7 @@ import Error404 from "./components/paginaError/Error404";
 import Cart from "./components/cart/Cart";
 import { CartProvider } from "./components/context/CartContext";
 import { Checkout } from "./components/Checkout/Checkout";
+import Footer from "./footer/Footer";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       </Routes>
       {/* hacerfooter */}
      </BrowserRouter>
+     <Footer/>
     </div>
     </CartProvider>
   )

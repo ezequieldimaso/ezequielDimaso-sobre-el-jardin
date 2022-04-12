@@ -19,19 +19,34 @@ const Cart = () => {
 
   return (
       <div className="container my-4">
-          <h2>Tu compra</h2>
-          
-
+          <h2 className='titleCart'>Tu compra</h2>
+          <hr />
           {
               cart.map((item) => (
-                  <div key={item.id}>
-                      <h4>{item.nombre}</h4>
-                      <p>Cantidad: {item.cantidad}</p>
-                      <p>Precio: ${item.cantidad * item.precio}</p>
-                      <img className='img' src={item.foto}alt='planta'/>
-                      <button className="btn btn-danger delete" onClick={() => eliminarItem(item.id)}>
-                          < BsFillTrashFill/>
-                      </button>
+                  <div className='cart'>
+                    <div key={item.id}>
+                       
+                           <img className='imgCarrito' src={item.foto}alt='planta'/>
+                       </div>
+
+                       <div>
+                            <h4>{item.nombre}</h4>
+                       </div>
+
+                        <div>
+                           <p>Cantidad: {item.cantidad}</p>
+                        </div>
+
+                        <div>
+                             <p>Precio: ${item.cantidad * item.precio}</p>
+                        </div>
+                         
+                        <div>
+                            <button className="btn btn-danger delete" onClick={() => eliminarItem(item.id)}>
+                            < BsFillTrashFill/> </button>
+                        </div>
+                        
+                    
                   </div>
               ))
           }

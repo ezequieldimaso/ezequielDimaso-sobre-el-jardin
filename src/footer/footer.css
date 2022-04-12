@@ -1,0 +1,17 @@
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    padding-bottom: 10px;
+}
+.icon1{
+    margin-right: 20px;
+}
+.icon2{
+    margin-right: 20px;
+}

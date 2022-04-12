@@ -3,7 +3,7 @@ import { useContext, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { CartContext } from '../context/CartContext'
 import {db} from '../../utils/Firebase';
-
+import "./checkout.css"
 
 
 export const Checkout = () => {
@@ -92,10 +92,10 @@ export const Checkout = () => {
 
     return (
         <div className="container my-5">
-            <h2>Checkout</h2>
+            <h2 className="titleCheckout">Checkout</h2>
             <hr/>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="formCheckout">
                 <input
                     className="form-control my-2"
                     type='text'

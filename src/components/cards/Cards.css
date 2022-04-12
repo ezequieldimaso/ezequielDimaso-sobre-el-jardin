@@ -4,8 +4,11 @@
     margin-top: 25px;
   }
   .cardLoading{
-    display: flex;
-    flex-flow: wrap;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding-bottom: 100px;
   }
 
   .cardContainer{
