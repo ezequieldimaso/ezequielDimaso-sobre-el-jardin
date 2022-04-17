@@ -8,10 +8,26 @@
     justify-content: center;
     background-color: gray;
     padding-bottom: 10px;
+    font-size: 20px;
 }
 .icon1{
     margin-right: 20px;
 }
 .icon2{
     margin-right: 20px;
+}
+.btnWhatsapp{
+    position: fixed;
+    background-color: green;
+    width: 80px;
+    height: 80px;
+    line-height: 70px;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50px;
+    font-size: 40px
+}
+a{
+    color: white;
+    text-decoration: none;
 }
