@@ -26,4 +26,4 @@ Para iniciar la aplicacion
 
 el Proyecto corre  en  **Localhost:3000/**
 
-### Desarrollado por  [Ezequiel Dimaso] 😊
+### Desarrollado por  [Ezequiel Dimaso] (https://github.com/ezequieldimaso) 😊
