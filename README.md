@@ -4,7 +4,7 @@
 
 Ecommerce desarrollado con ***_ReactJS_*** dedicado a la venta de plantas y macetas
 
-## Dependencias utilizadas
+## Dependencias utilizadas  🔧
   
 
 |Libreria          |  URL 
