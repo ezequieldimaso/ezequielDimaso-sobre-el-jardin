@@ -4,11 +4,9 @@ import {db} from '../../utils/Firebase';
 import { collection, getDocs, query, where } from "firebase/firestore"
 import"../items/Items.css"
 import ItemList from './Itemlist'
-import slide1 from "../../assets/img/slide1.jpg"
-import slide2 from "../../assets/img/slide2.jpg"
-import slide3 from "../../assets/img/slide3.jpg"
 import spinner from "../../assets/img/spinner.gif"
-const ItemListContainer = ({mensaje, mensaje2}) => {
+
+const ItemListContainer = ({mensaje}) => {
   const [produs, setProdus]= useState([])
   const [loading, setLoading] = useState(false)
 

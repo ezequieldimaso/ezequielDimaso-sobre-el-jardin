@@ -1,0 +1,30 @@
+.bodyError{
+    margin: 0;
+    padding: 0;
+   
+    font-family: 'Open Sans', sans-serif;
+}
+.error{
+    width: 30%;
+}
+.containerError{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.textError{
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+.buttonError{
+    padding: 13px 30px;
+    border-radius: 15px;
+    border: none;
+    background: rgb(5, 129, 245);
+    color: white;
+}
