@@ -1,6 +1,6 @@
 # Proyecto React  CODER-HOUSE c-28200
 
-***En el jardin***
+## **EN EL JARDIN**
 
 Ecommerce desarrollado con ***_ReactJS_*** dedicado a la venta de plantas y macetas
 
@@ -25,3 +25,5 @@ Para iniciar la aplicacion
 
 
 el Proyecto corre  en  **Localhost:3000/**
+
+### Desarrollado por  [Ezequiel Dimaso] 😊
