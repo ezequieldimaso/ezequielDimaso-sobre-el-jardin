@@ -3,6 +3,7 @@ import { BsFillTrashFill } from 'react-icons/bs'
 import { useContext } from "react"
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import "./cart.css"
 
 
 const Cart = () => {
@@ -57,7 +58,7 @@ const Cart = () => {
           <div className="my-2">
               <button className="btn btn-danger" onClick={vaciarCart}>Vaciar carrito</button>
               <Link to="/"><button className="btn btn-success mx-2">Seguir comprando</button></Link>
-              <Link to="/checkout" className="btn btn-warning mx-2">Terminar mi compra</Link>
+              <Link to="/checkout" className="btn btn-warning ">Terminar mi compra</Link>
           </div>
       </div>
   )

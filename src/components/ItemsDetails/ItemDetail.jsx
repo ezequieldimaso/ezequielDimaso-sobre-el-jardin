@@ -11,15 +11,13 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
   const { agregarAlCarrito, isInCart } = useContext(CartContext)
 
   const handleAgregar = () => {
-    if (cantidad === 0) return
-  
-    if (!isInCart(id)) {
+    
         const addItem = {
            id, nombre, precio, stock, cantidad,foto
         }
 
         agregarAlCarrito(addItem)
-    }
+
   }
 
   return (
@@ -39,29 +37,23 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
                       
 
                       {
-                        isInCart(id) 
-                        ?  <Link to="/cart" className="btn btn-success my-3">
-                                Terminar mi compra
-                            </Link>
-                            
-                        :
-                            <>
-                                <ItemCount 
+                        !isInCart(id) 
+                        ? 
+                            <ItemCount 
                                     max={stock} 
                                     counter={cantidad} 
                                     setCounter={setCantidad}
-                                />
-                      
-                                <button
-                                    className="btn btn-success my-2"            
-                                    onClick={handleAgregar}
-                                    disabled={cantidad === 0}
-                                >
-                                    Agregar al carrito
-                                </button>
+                                    onAdd={handleAgregar}
+                                />   
+                        :
+                          <>
+                            <Link to="/cart" className="btn btn-success my-3">
+                              Terminar mi compra
+                            </Link>
+                            <Link to="/"><button className="btn btn-warning mx-2 ">Seguir comprando</button></Link>
                             </>
                       }
-                      <Link to="/"><button className="btn btn-warning mx-2">Seguir comprando</button></Link>
+                      
                     </div>
                 </div>
             </div>
