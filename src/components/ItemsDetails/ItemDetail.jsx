@@ -7,22 +7,23 @@ import { CartContext } from '../context/CartContext'
 export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
 
   const [cantidad, setCantidad] = useState(0)
+  const[compra ,setCompra]= useState(false)
+  const { agregarAlCarrito} = useContext(CartContext)
 
-  const { agregarAlCarrito, isInCart } = useContext(CartContext)
-
-  const handleAgregar = () => {
+  const handleAgregar = (cantidad) => {
     
         const addItem = {
-           id, nombre, precio, stock, cantidad,foto
-        }
-
-        agregarAlCarrito(addItem)
-
+          id,
+          nombre,
+          precio,
+          stock, 
+          cantidad:cantidad,
+          foto }
+          agregarAlCarrito(addItem)
+          setCompra(true)
   }
 
   return (
-  
- 
 
         <div className='detalleContainer'>
           <img  className="imgDetail img-thumbnail" src={foto}alt='planta'/>
@@ -34,26 +35,21 @@ export const ItemDetail = ({id, stock,foto, nombre ,descripcion ,precio}) => {
                     <div className="card-body">
                       <h3 className="price">${precio}</h3>
                       <p  className='textDescripcion'>{descripcion}</p>
-                      
-
-                      {
-                        !isInCart(id) 
-                        ? 
-                            <ItemCount 
+                 
+                       <ItemCount 
                                     max={stock} 
                                     counter={cantidad} 
                                     setCounter={setCantidad}
                                     onAdd={handleAgregar}
                                 />   
-                        :
+                      {compra &&
                           <>
                             <Link to="/cart" className="btn btn-success my-3">
                               Terminar mi compra
                             </Link>
                             <Link to="/"><button className="btn btn-warning mx-2 ">Seguir comprando</button></Link>
                             </>
-                      }
-                      
+                      }                    
                     </div>
                 </div>
             </div>

@@ -29,10 +29,14 @@ export const Checkout = () => {
                     const docRef = doc(db, 'items', item.id)
                     getDoc(docRef)
                         .then((dbDoc) => {
+                            if (doc.data().stock >= item.cantidad) {
                             updateDoc(docRef, {stock: dbDoc.data().stock - item.cantidad})
+                        }else{
+                            alert('No hay stock de este item')
+                        }
                         })
                 })
-
+            
                 setOrderId(resp.id)
                 vaciarCart()
             })
