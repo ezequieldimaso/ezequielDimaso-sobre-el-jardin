@@ -4,7 +4,7 @@
 
 Ecommerce desarrollado con ***_ReactJS_*** dedicado a la venta de plantas y macetas
 
-![jardin](https://user-images.githubusercontent.com/90361007/163888915-e39278b1-b04c-45ff-b71f-c22c3c0fd3be.gif)
+![Eneljardin](https://user-images.githubusercontent.com/90361007/165190967-8cd4a6ae-8fd2-49e3-8385-f578c9e51626.gif)
 
 ## Dependencias utilizadas  🛠️
   
